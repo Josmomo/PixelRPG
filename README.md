@@ -5,10 +5,14 @@ Download: http://pyxeledit.com/
 Download: http://www.mapeditor.org/
 ## Unity
 Download: https://store.unity.com/
+
+## Features implemented
+* Basic movement and collision
+* Warp and fading
+
 ## TODO
 ### Pyxel
 * Basic Tileset
 ### Tiled
 * Testmap with collision
 ### Unity
-* Basic movement and collision
