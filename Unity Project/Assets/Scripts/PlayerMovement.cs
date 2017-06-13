@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
-	Rigidbody2D rigidbody2D;
-	Animator animator;
+	private Rigidbody2D rigidbody2D;
+	private Animator animator;
+    private Vector2 vector2Movement;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		rigidbody2D = GetComponent<Rigidbody2D>();
 		animator = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		Vector2 vector2Movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        vector2Movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
 		if (vector2Movement != Vector2.zero) {
 			animator.SetBool("isWalking", true);
