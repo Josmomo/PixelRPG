@@ -16,3 +16,11 @@ Download: https://store.unity.com/
 ### Tiled
 * Testmap with collision
 ### Unity
+* Attack system (Sword, Throw, Magic?)
+* Damage system
+* Item system
+* Dialog
+* Interactive switches/doors
+* Menu
+* Stats
+* Status effects (temporarily immune, slowed, etc.)
