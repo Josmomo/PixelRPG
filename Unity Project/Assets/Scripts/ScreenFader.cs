@@ -7,8 +7,8 @@ public class ScreenFader : MonoBehaviour {
     public Animator animator;
     public bool isFading = false;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         animator = GetComponent<Animator>();
     }
 
