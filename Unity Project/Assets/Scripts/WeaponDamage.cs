@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class WeaponDamage : MonoBehaviour {
 
+    public int damageToEnemy;
+
 	// Use this for initialization
 	void Start () {
-		
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -16,7 +17,7 @@ public class WeaponDamage : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag == "Enemy") {
-            Destroy(other.gameObject);
+            other.gameObject.GetComponent<EnemyHealthManager>().DamageEnemy(damageToEnemy);
         }
     }
 }

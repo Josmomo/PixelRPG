@@ -5,7 +5,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour {
 
 	public Animator animator;
-    private bool isDisplayed = false;
+    private bool isInventoryDisplayed = false;
     private List<Item> items;
 
     private WeaponHandheld weaponHandheld;
@@ -27,9 +27,9 @@ public class Inventory : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyUp(KeyCode.I)) {
-            isDisplayed = !isDisplayed;
-            animator.SetBool("isDisplayInventory", isDisplayed);
-            Debug.Log("Inventory key pressed! isDisplayed = " + isDisplayed);
+            isInventoryDisplayed = !isInventoryDisplayed;
+            animator.SetBool("isInventoryDisplayed", isInventoryDisplayed);
+            Debug.Log("Inventory key pressed! isDisplayed = " + isInventoryDisplayed);
         }
     }
 }
