@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour {
 	private Rigidbody2D rigidbody2D;
 	private Animator animator;
     private Vector2 vector2Movement;
+    private float xPos;
+    private float yPos;
     public bool isAttacking;
 
     // Use this for initialization
@@ -27,16 +29,19 @@ public class PlayerController : MonoBehaviour {
 	}
 
     private void Move() {
-        vector2Movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+        // Normalize the vector for position but not for input
+        xPos = Input.GetAxisRaw("Horizontal");
+        yPos = Input.GetAxisRaw("Vertical");
+        vector2Movement = new Vector2(xPos, yPos).normalized;
 
         if (vector2Movement != Vector2.zero) {
             animator.SetBool("isWalking", true);
-            animator.SetFloat("input_x", vector2Movement.x);
-            animator.SetFloat("input_y", vector2Movement.y);
+            animator.SetFloat("input_x", xPos);
+            animator.SetFloat("input_y", yPos);
         } else {
             animator.SetBool("isWalking", false);
         }
-
+        
         rigidbody2D.MovePosition(rigidbody2D.position + vector2Movement * movementSpeed * Time.deltaTime);
     }
 
